@@ -11,6 +11,8 @@ const TeamRoute = require('./routes/teamRoute')
 const UserRoute = require('./routes/userRoute')
 const AuthRoute = require('./routes/authRoute')
 const ProjectRoute = require('./routes/projectRoute')
+const BlogsRoute = require('./routes/blogsRoute')
+const contactRoute = require('./routes/contactRoute')
 
 app.use(express.json());
 dataConnection();
@@ -29,6 +31,8 @@ app.use('/api/v1/team', TeamRoute);
 app.use('/api/v1/user', UserRoute);
 app.use('/api/v1/auth', AuthRoute);
 app.use('/api/v1/project', ProjectRoute);
+app.use('/api/v1/blogs', BlogsRoute);
+app.use('/api/v1/contact', contactRoute);
 
 })
 // Handle rejection outside express

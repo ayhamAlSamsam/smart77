@@ -12,9 +12,8 @@ exports.resizeServiceImages = asyncHandler(async (req, res, next) => {
   const filename = `service-${uuidv4()}-${Date.now()}.jpeg`;
   if (req.file) {
     await sharp(req.file.buffer)
-      .resize(600, 600)
-      .toFormat("jpeg")
-      .jpeg({ quality: 100 })
+      .toFormat("webp")
+      .jpeg({ quality: 70 })
       .toFile(`uploads/services/${filename}`);
 
     // Save image into our db

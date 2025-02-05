@@ -10,7 +10,7 @@ const {
   resizeProjectImages
 } = require('..//services/projectService');
 
-const {getProjectValidator,createProjectValidator,updateProjectValidator} = require("../utils/validators/projectValidator")
+const {getProjectValidator,createProjectValidator,updateProjectValidator,deleteProjectValidator} = require("../utils/validators/projectValidator")
 
 const router = express.Router();
 
@@ -20,6 +20,6 @@ router
   .route('/:id')
   .get(getProjectValidator , getProject)
   .put( uploadProjectImage,resizeProjectImages,updateProjectValidator,updateProject)
-  .delete(deleteProject);
+  .delete(deleteProjectValidator,deleteProject);
 
 module.exports = router;

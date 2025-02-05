@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const createToken = require("../utils/createToken")
 const crypto = require('crypto');
-const sendEmail = require=('../utils/sendEmail.js')
+
 
 
 
