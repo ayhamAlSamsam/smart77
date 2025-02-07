@@ -16,7 +16,7 @@ const teamSchema = new mongoose.Schema({
 imageCover: {
       type: String,
       required: [true, 'Employee Image cover is required'],
-    },
+    }, 
 job : {
       type: String,
       required: [true, 'Employee job is required'],

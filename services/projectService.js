@@ -8,12 +8,11 @@ exports.uploadProjectImage = uploadSingleImage("imageCover");
 
 // Image processing
 exports.resizeProjectImages = asyncHandler(async (req, res, next) => {
-  const filename = `Project-${uuidv4()}-${Date.now()}.jpeg`;
+  const filename = `Project-${uuidv4()}-${Date.now()}.webp`;
   if (req.file) {
     await sharp(req.file.buffer)
-      .resize(600, 600)
-      .toFormat("jpeg")
-      .jpeg({ quality: 100 })
+      .toFormat("webp")
+      .webp({ quality: 70 })
       .toFile(`uploads/projects/${filename}`);
 
     // Save image into our db

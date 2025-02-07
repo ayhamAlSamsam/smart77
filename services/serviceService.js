@@ -9,11 +9,11 @@ exports.uploadServiceImage = uploadSingleImage("imageCover");
 
 // Image processing
 exports.resizeServiceImages = asyncHandler(async (req, res, next) => {
-  const filename = `service-${uuidv4()}-${Date.now()}.jpeg`;
+  const filename = `service-${uuidv4()}-${Date.now()}.webp`;
   if (req.file) {
     await sharp(req.file.buffer)
       .toFormat("webp")
-      .jpeg({ quality: 70 })
+      .webp({ quality: 70 })
       .toFile(`uploads/services/${filename}`);
 
     // Save image into our db

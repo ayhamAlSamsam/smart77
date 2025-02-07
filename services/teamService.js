@@ -9,12 +9,11 @@ exports.uploadEmployeeImage = uploadSingleImage("imageCover");
 
 // Image processing
 exports.resizeEmployeeImages = asyncHandler(async (req, res, next) => {
-  const filename = `Employee-${uuidv4()}-${Date.now()}.jpeg`;
+  const filename = `Employee-${uuidv4()}-${Date.now()}.webp`;
   if (req.file) {
     await sharp(req.file.buffer)
-      .resize(600, 600)
-      .toFormat("jpeg")
-      .jpeg({ quality: 100 })
+      .toFormat("webp")
+      .webp({ quality: 70 })
       .toFile(`uploads/team/${filename}`);
 
     // Save image into our db
