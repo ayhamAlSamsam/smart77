@@ -7,8 +7,7 @@ exports.getLocationValidator = [
 ];
 exports.createLocationValidator = [
   check("location").notEmpty().withMessage("location required"),
-
-  check("descrpition")
+  check("description")
     .notEmpty()
     .withMessage("descrpition required")
     .isLength({ min: 8 })

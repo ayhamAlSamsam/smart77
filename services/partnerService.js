@@ -4,11 +4,11 @@ const sharp = require("sharp");
 const factory = require("./handlersFactory");
 const { uploadSingleImage } = require("../middlewares/uploadingImage");
 const Partner = require("../models/partnerModel");
-exports.uploadProjectImage = uploadSingleImage("logo");
+exports.uploadPartnerImage = uploadSingleImage("logo");
 
 // Image processing
-exports.resizeProjectImages = asyncHandler(async (req, res, next) => {
-  const filename = `Project-${uuidv4()}-${Date.now()}.webp`;
+exports.resizePartnerImages = asyncHandler(async (req, res, next) => {
+  const filename = `Partner-${uuidv4()}-${Date.now()}.webp`;
   if (req.file) {
     await sharp(req.file.buffer)
       .toFormat("webp")
@@ -16,7 +16,7 @@ exports.resizeProjectImages = asyncHandler(async (req, res, next) => {
       .toFile(`uploads/partners/${filename}`);
 
     // Save image into our db
-    req.body.imageCover = filename;
+    req.body.logo = filename;
   }
 
   next();

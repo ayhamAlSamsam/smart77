@@ -6,14 +6,15 @@ const locationSchema = new mongoose.Schema(
       type: String,
       required: [true, " location is required"],
     },
-    imageCover: {
-      type: String,
-      required: [true, "location Image cover is required"],
-    },
-    description: {
+   
+    description : {
       type: String,
       required: [true, "location description is required"],
       minlength: [20, "Too short location description"],
+    },
+    imageCover: {
+      type: String,
+      required: [true, "location Imagecover is required"],
     },
   },
   { timestamps: true }

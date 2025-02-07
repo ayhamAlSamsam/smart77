@@ -4,11 +4,11 @@ const sharp = require("sharp");
 const factory = require("./handlersFactory");
 const { uploadSingleImage } = require("../middlewares/uploadingImage");
 const Location = require("../models/locationModel");
-exports.uploadProjectImage = uploadSingleImage("imageCover");
+exports.uploadLocationImage = uploadSingleImage("imageCover");
 
 // Image processing
-exports.resizeProjectImages = asyncHandler(async (req, res, next) => {
-  const filename = `Project-${uuidv4()}-${Date.now()}.webp`;
+exports.resizeLocationImages = asyncHandler(async (req, res, next) => {
+  const filename = `Location-${uuidv4()}-${Date.now()}.webp`;
   if (req.file) {
     await sharp(req.file.buffer)
       .toFormat("webp")

@@ -6,6 +6,8 @@ const {
   createPartner,
   deletePartner,
   updatePartner,
+  uploadPartnerImage,
+  resizePartnerImages
 } = require("..//services/partnerService");
 
 const {
@@ -17,11 +19,13 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getPartners).post(createPartnerValidator, createPartner);
+router.route("/").get(getPartners).post(uploadPartnerImage,
+  resizePartnerImages,createPartnerValidator, createPartner);
 router
   .route("/:id")
   .get(getPartnerValidator, getPartner)
-  .put(updatePartnerValidator, updatePartner)
+  .put(uploadPartnerImage,
+    resizePartnerImages,updatePartnerValidator, updatePartner)
   .delete(deletePartnerValidator, deletePartner);
 
 module.exports = router;

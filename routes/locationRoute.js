@@ -6,6 +6,8 @@ const {
   createLocation,
   deleteLocation,
   updateLocation,
+  uploadLocationImage,
+  resizeLocationImages
 } = require("..//services/locationService");
 
 const {
@@ -17,11 +19,11 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getLocations).post(createLocationValidator, createLocation);
+router.route("/").get(getLocations).post(uploadLocationImage,resizeLocationImages,createLocationValidator, createLocation);
 router
   .route("/:id")
   .get(getLocationValidator, getLocation)
-  .put(updateLocationValidator, updateLocation)
+  .put(uploadLocationImage,resizeLocationImages,updateLocationValidator, updateLocation)
   .delete(deleteLocationValidator, deleteLocation);
 
 module.exports = router;

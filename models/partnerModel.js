@@ -6,7 +6,6 @@ const partnerSchema = new mongoose.Schema({
       type: String,
       required: [true, 'partner logo is required'],
     },
-
   },
 { timestamps: true }
 );
