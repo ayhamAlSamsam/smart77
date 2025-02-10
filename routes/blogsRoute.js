@@ -6,6 +6,8 @@ const {
   createBlog,
   deleteBlog,
   updateBlog,
+  uploadBlogImage,
+  resizeBlogImages
 } = require("..//services/blogsService");
 
 const {
@@ -17,11 +19,13 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getBlogs).post(createBlogValidator, createBlog);
+router.route("/").get(getBlogs).post(  uploadBlogImage,
+  resizeBlogImages,createBlogValidator, createBlog);
 router
   .route("/:id")
   .get(getBlogValidator, getBlog)
-  .put(updateBlogValidator, updateBlog)
+  .put(  uploadBlogImage,
+    resizeBlogImages,updateBlogValidator, updateBlog)
   .delete(deleteBlogValidator, deleteBlog);
 
 module.exports = router;

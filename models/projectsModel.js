@@ -9,7 +9,9 @@ const projectSchema = new mongoose.Schema({
     minlength: [3, 'Too short project name'],
     maxlength: [32, 'Too long project name'],
   },
-
+  commingSoon : {
+    type : Boolean 
+  } , 
   slug: {
     type: String,
     lowercase: true,
@@ -34,7 +36,6 @@ if (doc.imageCover) {
   doc.imageCover = imageUrl;
 }
 };
-
 
 // findOne, findAll and update
 projectSchema.post('init', (doc) => {

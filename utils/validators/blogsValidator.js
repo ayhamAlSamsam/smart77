@@ -5,29 +5,50 @@ exports.getBlogValidator = [
   check('id').isMongoId().withMessage('Invalid Blog id format'),
   validatorMiddleware,
 ];
-exports.createBlogValidator = [
-  check('location')
-    .notEmpty()
-    .withMessage('location required')
-    .isLength({ min: 2 })
-    .withMessage('Too short location name')
-    .isLength({ max: 32 })
-    .withMessage('too long location name'),
-
-    check('text')
-    .notEmpty()
-    .withMessage("text required") 
-    .isLength({min : 5})
-    .withMessage("too short text"),
+  
+  exports.createBlogValidator = [
+    
+    check('location_ar')
+      .notEmpty()
+      .withMessage('Arabic location is required')
+      .isLength({ min: 2, max: 32 })
+      .withMessage('Location must be between 2 and 32 characters'),
+  
+    check('location_en')
+      .notEmpty()
+      .withMessage('English location is required')
+      .isLength({ min: 2, max: 32 })
+      .withMessage('Location must be between 2 and 32 characters'),
+  
+    check('text_ar')
+      .notEmpty()
+      .withMessage('Arabic text is required')
+      .isLength({ min: 5 })
+      .withMessage('Too short text'),
+  
+    check('text_en')
+      .notEmpty()
+      .withMessage('English text is required')
+      .isLength({ min: 5 })
+      .withMessage('Too short text'),
+  
     check('publisher')
-    .notEmpty()
-    .withMessage("publisher is required"),
+      .notEmpty()
+      .withMessage('Publisher is required'),
+  
     check('publishDate')
-    .notEmpty()
-    .withMessage('publishDate is required'),    
-
-  validatorMiddleware,
-];
+      .notEmpty()
+      .withMessage('Publish date is required')
+      .isISO8601()
+      .withMessage('Invalid date format'),
+  
+    check('imageCover')
+      .notEmpty()
+      .withMessage('Image cover is required'),
+  
+    validatorMiddleware,
+  ];
+  
 exports.updateBlogValidator = [
   check('id').isMongoId().withMessage('Invalid Blog id format'),
   validatorMiddleware,

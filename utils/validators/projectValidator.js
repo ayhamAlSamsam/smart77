@@ -17,7 +17,8 @@ exports.createProjectValidator = [
     .custom((val, { req }) => {
         req.body.slug = slugify(val);
         return true}) ,
-
+      check("comingSoon")
+      .optional(),
     check('description')
     .notEmpty()
     .withMessage("description required") 

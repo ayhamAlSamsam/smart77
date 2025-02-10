@@ -11,9 +11,9 @@ const partnerSchema = new mongoose.Schema({
 );
 
 const setImageURL = (doc) => {
-if (doc.image) {
-  const imageUrl = `${process.env.BASE_URL}/partner/${doc.image}`;
-  doc.image = imageUrl;
+if (doc.logo) {
+  const imageUrl = `${process.env.BASE_URL}/partner/${doc.logo}`;
+  doc.logo = imageUrl;
 }
 };
 

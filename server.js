@@ -21,6 +21,8 @@ const partnerRoute = require("./routes/partnerRoute");
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
+app.use(express.urlencoded({ extended: true })); 
+
 dataConnection();
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
