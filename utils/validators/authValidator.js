@@ -25,6 +25,7 @@ exports.signupValidator = [
         }
       })
     ),
+    
   check('password')
     .notEmpty()
     .withMessage('Password required')

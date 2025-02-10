@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
@@ -18,6 +19,7 @@ const locationRoute = require("./routes/locationRoute");
 const partnerRoute = require("./routes/partnerRoute");
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 dataConnection();
 if (process.env.NODE_ENV === "development") {

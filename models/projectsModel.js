@@ -9,10 +9,12 @@ const projectSchema = new mongoose.Schema({
     minlength: [3, 'Too short project name'],
     maxlength: [32, 'Too long project name'],
   },
+
   slug: {
     type: String,
     lowercase: true,
   },
+
 imageCover: {
       type: String,
       required: [true, 'project Image cover is required'],
@@ -27,9 +29,9 @@ description : {
 );
 
 const setImageURL = (doc) => {
-if (doc.image) {
-  const imageUrl = `${process.env.BASE_URL}/project/${doc.image}`;
-  doc.image = imageUrl;
+if (doc.imageCover) {
+  const imageUrl = `${process.env.BASE_URL}/projects/${doc.imageCover}`;
+  doc.imageCover = imageUrl;
 }
 };
 
