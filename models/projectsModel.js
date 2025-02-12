@@ -26,6 +26,7 @@ description : {
       required: [true, 'project description is required'],
       minlength: [20, 'Too short project description'],
     },
+    commingSoon : Boolean ,
   },
 { timestamps: true }
 );

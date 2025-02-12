@@ -26,7 +26,6 @@ const blogsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// تعديل رابط الصورة
 const setImageURL = (doc) => {
   if (doc.imageCover) {
     doc.imageCover = `${process.env.BASE_URL}/blogs/${doc.imageCover}`;
@@ -47,4 +46,3 @@ blogsSchema.post("save", (doc) => {
 const blogsModel = mongoose.model("blogs", blogsSchema);
 
 module.exports = blogsModel;
-  

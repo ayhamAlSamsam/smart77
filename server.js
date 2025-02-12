@@ -17,6 +17,7 @@ const BlogsRoute = require("./routes/blogsRoute");
 const contactRoute = require("./routes/contactRoute");
 const locationRoute = require("./routes/locationRoute");
 const partnerRoute = require("./routes/partnerRoute");
+const contactUsRoute = require("./routes/contactUsRoute");
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'uploads')));
@@ -43,6 +44,7 @@ const server = app.listen(PORT, () => {
   app.use("/api/v1/contact", contactRoute);
   app.use("/api/v1/location", locationRoute);
   app.use("/api/v1/partner", partnerRoute);
+  app.use("/api/v1/contactUs", contactUsRoute);
 });
 // Handle rejection outside express
 process.on("unhandledRejection", (err) => {
