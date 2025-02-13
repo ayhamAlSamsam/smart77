@@ -1,41 +1,37 @@
-const { check } = require('express-validator');
-const validatorMiddleware = require('../../middlewares/validatorMiddleware');
-const slugify = require('slugify');
+const { check } = require("express-validator");
+const validatorMiddleware = require("../../middlewares/validatorMiddleware");
+const slugify = require("slugify");
 
 exports.getServiceValidator = [
-  check('id').isMongoId().withMessage('Invalid Service id format'),
+  check("id").isMongoId().withMessage("Invalid Service id format"),
   validatorMiddleware,
 ];
 exports.createServiceValidator = [
-  check('name')
+  check("name")
     .notEmpty()
-    .withMessage('Service required')
+    .withMessage("Service required")
     .isLength({ min: 3 })
-    .withMessage('Too short Service name')
+    .withMessage("Too short Service name")
     .isLength({ max: 32 })
-    .withMessage('too long Service name')
+    .withMessage("too long Service name")
     .custom((val, { req }) => {
-        req.body.slug = slugify(val);
-        return true}) ,
+      req.body.slug = slugify(val);
+      return true;
+    }),
 
-    check('description')
+  check("description")
     .notEmpty()
-    .withMessage("description required") 
-    .isLength({min : 15})
+    .withMessage("description required")
+    .isLength({ min: 15 })
     .withMessage("too short description"),
-    check('imageCover')
-    .notEmpty()
-    .withMessage('Service imageCover is required'),
+  check("imageCover").notEmpty().withMessage("Service imageCover is required"),
   validatorMiddleware,
 ];
 exports.updateServiceValidator = [
-  check('id').isMongoId().withMessage('Invalid Service id format'),
-  check('name').custom((val, { req }) => {
-    req.body.slug = slugify(val);
-    return true}) ,
+  check("id").isMongoId().withMessage("Invalid Service id format"),
   validatorMiddleware,
 ];
 exports.deleteServiceValidator = [
-  check('id').isMongoId().withMessage('Invalid Service id format'),
+  check("id").isMongoId().withMessage("Invalid Service id format"),
   validatorMiddleware,
 ];

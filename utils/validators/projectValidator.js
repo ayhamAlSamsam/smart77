@@ -31,9 +31,6 @@ exports.createProjectValidator = [
 ];
 exports.updateProjectValidator = [
   check('id').isMongoId().withMessage('Invalid Project id format'),
-  check('name').custom((val, { req }) => {
-    req.body.slug = slugify(val);
-    return true}) ,
   validatorMiddleware,
 ];
 exports.deleteProjectValidator = [
