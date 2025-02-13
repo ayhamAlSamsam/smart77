@@ -27,6 +27,10 @@ description : {
       minlength: [20, 'Too short project description'],
     },
     commingSoon : Boolean ,
+    category: {
+      type: String , 
+      required: [true, 'Category is required'] ,
+    }
   },
 { timestamps: true }
 );

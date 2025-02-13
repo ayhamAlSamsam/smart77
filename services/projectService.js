@@ -22,6 +22,20 @@ exports.resizeProjectImages = asyncHandler(async (req, res, next) => {
   next();
 });
 
+
+exports.filterProjectsByCategory = asyncHandler(async (req, res, next) => {
+  const { category } = req.params; 
+  try {
+    const projects = await Project.find({ category: category });
+    res.status(200).json({
+      data: projects, 
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 // @desc    Get list of projects
 // @route   GET /api/v1/project
 // @access  Public

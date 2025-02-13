@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 
 const {
   getProjects,
@@ -7,19 +7,37 @@ const {
   updateProject,
   deleteProject,
   uploadProjectImage,
-  resizeProjectImages
-} = require('..//services/projectService');
+  resizeProjectImages,
+  filterProjectsByCategory,
+} = require("..//services/projectService");
 
-const {getProjectValidator,createProjectValidator,updateProjectValidator,deleteProjectValidator} = require("../utils/validators/projectValidator")
+const {
+  getProjectValidator,
+  createProjectValidator,
+  updateProjectValidator,
+  deleteProjectValidator,
+} = require("../utils/validators/projectValidator");
 
 const router = express.Router();
 
-router.route('/').get(getProjects).post
-( uploadProjectImage,resizeProjectImages,createProjectValidator,createProject);
 router
-  .route('/:id')
-  .get(getProjectValidator , getProject)
-  .put( uploadProjectImage,resizeProjectImages,updateProjectValidator,updateProject)
-  .delete(deleteProjectValidator,deleteProject);
+  .route("/")
+  .get(getProjects, filterProjectsByCategory)
+  .post(
+    uploadProjectImage,
+    resizeProjectImages,
+    createProjectValidator,
+    createProject
+  );
+router
+  .route("/:id")
+  .get(getProjectValidator, getProject)
+  .put(
+    uploadProjectImage,
+    resizeProjectImages,
+    updateProjectValidator,
+    updateProject
+  )
+  .delete(deleteProjectValidator, deleteProject);
 
 module.exports = router;
