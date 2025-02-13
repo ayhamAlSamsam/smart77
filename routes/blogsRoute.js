@@ -7,25 +7,26 @@ const {
   deleteBlog,
   updateBlog,
   uploadBlogImage,
-  resizeBlogImages
+  resizeBlogImages,
 } = require("..//services/blogsService");
 
-const {
+/*const {
   getBlogValidator,
   createBlogValidator,
   deleteBlogValidator,
   updateBlogValidator,
-} = require("../utils/validators/blogsValidator");
+} = require("../utils/validators/blogsValidator");*/
 
 const router = express.Router();
 
-router.route("/").get(getBlogs).post(  uploadBlogImage,
-  resizeBlogImages,createBlogValidator, createBlog);
+router
+  .route("/")
+  .get(getBlogs)
+  .post(uploadBlogImage, resizeBlogImages, createBlog);
 router
   .route("/:id")
-  .get(getBlogValidator, getBlog)
-  .put(  uploadBlogImage,
-    resizeBlogImages,updateBlogValidator, updateBlog)
-  .delete(deleteBlogValidator, deleteBlog);
+  .get(getBlog)
+  .put(uploadBlogImage, resizeBlogImages, updateBlog)
+  .delete(deleteBlog);
 
 module.exports = router;

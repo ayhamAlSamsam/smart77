@@ -17,7 +17,9 @@ const serviceSchema = new mongoose.Schema(
       type: String,
       required: [true, "Service Image cover is required"],
     },
+
     commingSoon : Boolean ,
+    
     description: {
       type: String,
       required: [true, "Service description is required"],

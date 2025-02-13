@@ -6,11 +6,11 @@ const locationSchema = new mongoose.Schema(
       type: String,
       required: [true, " location is required"],
     },
-   
-    description : {
+
+    description: {
       type: String,
       required: [true, "location description is required"],
-      minlength: [20, "Too short location description"],
+      minlength: [10, "Too short location description"],
     },
     imageCover: {
       type: String,
@@ -22,7 +22,7 @@ const locationSchema = new mongoose.Schema(
 
 const setImageURL = (doc) => {
   if (doc.imageCover) {
-    const imageUrl = `${process.env.BASE_URL}/location/${doc.imageCover}`;
+    const imageUrl = `${process.env.BASE_URL}/locations/${doc.imageCover}`;
     doc.imageCover = imageUrl;
   }
 };
