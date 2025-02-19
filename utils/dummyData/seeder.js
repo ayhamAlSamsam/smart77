@@ -1,13 +1,13 @@
 const fs = require('fs');
 require('colors');
 const dotenv = require('dotenv');
-const Projects = require('../../models/serviceModel');
+const Projects = require('../../models/teamModel');
 const dbConnection = require('../../config/database');
 dotenv.config({ path: '../../config.env' });
 // connect to DB
 dbConnection();
 // Read data
-const project = JSON.parse(fs.readFileSync('./service.json'));
+const project = JSON.parse(fs.readFileSync('./Team.json'));
 
 // Insert data into DB
 const insertData = async () => {

@@ -1,0 +1,43 @@
+[
+    {
+      "name_ar": "أحمد علي",
+      "name_en": "Ahmed Ali",
+      "slug": "ahmed-ali",
+      "imageCover": "ahmed.jpg",
+      "job_ar": "مطور ويب أمامي",
+      "job_en": "Frontend Developer"
+    },
+    {
+      "name_ar": "سارة محمد",
+      "name_en": "Sarah Mohammed",
+      "slug": "sarah-mohammed",
+      "imageCover": "sarah.jpg",
+      "job_ar": "مصممة تجربة المستخدم",
+      "job_en": "UX Designer"
+    },
+    {
+      "name_ar": "خالد حسن",
+      "name_en": "Khaled Hassan",
+      "slug": "khaled-hassan",
+      "imageCover": "khaled.jpg",
+      "job_ar": "مطور ويب خلفي",
+      "job_en": "Backend Developer"
+    },
+    {
+      "name_ar": "ليلى عمر",
+      "name_en": "Laila Omar",
+      "slug": "laila-omar",
+      "imageCover": "laila.jpg",
+      "job_ar": "مديرة مشروع",
+      "job_en": "Project Manager"
+    },
+    {
+      "name_ar": "يوسف محمود",
+      "name_en": "Youssef Mahmoud",
+      "slug": "youssef-mahmoud",
+      "imageCover": "youssef.jpg",
+      "job_ar": "مهندس برمجيات",
+      "job_en": "Software Engineer"
+    }
+  ]
+  

@@ -1,0 +1,38 @@
+[
+    {
+      "location_ar": "تطوير الويب الأمامي",
+      "location_en": "Frontend Web Development",
+      "description_ar": "يشمل تطوير الويب الأمامي إنشاء واجهات المستخدم باستخدام HTML وCSS وJavaScript.",
+      "description_en": "Frontend web development involves building user interfaces using HTML, CSS, and JavaScript.",
+      "imageCover": "frontend.jpg"
+    },
+    {
+      "location_ar": "تطوير الويب الخلفي",
+      "location_en": "Backend Web Development",
+      "description_ar": "يركز تطوير الويب الخلفي على إدارة قواعد البيانات والخوادم باستخدام Node.js وExpress.",
+      "description_en": "Backend web development focuses on managing databases and servers using Node.js and Express.",
+      "imageCover": "backend.jpg"
+    },
+    {
+      "location_ar": "تطوير الويب الكامل",
+      "location_en": "Full Stack Web Development",
+      "description_ar": "يتضمن تطوير الويب الكامل مهارات تطوير كل من الواجهة الأمامية والخلفية.",
+      "description_en": "Full-stack web development includes skills in both frontend and backend development.",
+      "imageCover": "fullstack.jpg"
+    },
+    {
+      "location_ar": "تصميم تجربة المستخدم",
+      "location_en": "User Experience Design",
+      "description_ar": "تصميم تجربة المستخدم يركز على تحسين تفاعل المستخدم مع موقع الويب.",
+      "description_en": "User Experience Design focuses on enhancing user interaction with a website.",
+      "imageCover": "uxdesign.jpg"
+    },
+    {
+      "location_ar": "تحسين محركات البحث",
+      "location_en": "Search Engine Optimization",
+      "description_ar": "تحسين محركات البحث يساعد مواقع الويب على الظهور في نتائج البحث بشكل أفضل.",
+      "description_en": "Search Engine Optimization helps websites rank better in search engine results.",
+      "imageCover": "seo.jpg"
+    }
+  ]
+  

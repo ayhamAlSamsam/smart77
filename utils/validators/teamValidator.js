@@ -7,7 +7,17 @@ exports.getEmployeeValidator = [
   validatorMiddleware,
 ];
 exports.createEmployeeValidator = [
-  check('name')
+  check('name_ar')
+    .notEmpty()
+    .withMessage('Employee required')
+    .isLength({ min: 3 })
+    .withMessage('Too short Employee name')
+    .isLength({ max: 32 })
+    .withMessage('too long Employee name')
+    .custom((val, { req }) => {
+        req.body.slug = slugify(val);
+        return true}) ,
+  check('name_en')
     .notEmpty()
     .withMessage('Employee required')
     .isLength({ min: 3 })
@@ -18,7 +28,12 @@ exports.createEmployeeValidator = [
         req.body.slug = slugify(val);
         return true}) ,
 
-    check('job') 
+    check('job_ar') 
+    .notEmpty()
+    .withMessage("job required") 
+    .isLength({min : 5})
+    .withMessage("too short job"),
+    check('job_en') 
     .notEmpty()
     .withMessage("job required") 
     .isLength({min : 5})

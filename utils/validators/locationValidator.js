@@ -6,8 +6,14 @@ exports.getLocationValidator = [
   validatorMiddleware,
 ];
 exports.createLocationValidator = [
-  check("location").notEmpty().withMessage("location required"),
-  check("description")
+  check("location_ar").notEmpty().withMessage("location required"),
+  check("location_en").notEmpty().withMessage("location required"),
+  check("description_ar")
+    .notEmpty()
+    .withMessage("descrpition required")
+    .isLength({ min: 8 })
+    .withMessage("too short description"),
+  check("description_en")
     .notEmpty()
     .withMessage("descrpition required")
     .isLength({ min: 8 })

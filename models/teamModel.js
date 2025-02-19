@@ -2,10 +2,15 @@ const mongoose = require("mongoose");
 
 const teamSchema = new mongoose.Schema(
   {
-    name: {
+    name_ar: {
       type: String,
       required: [true, "employee required"],
-      unique: [true, "employee must be unique"],
+      minlength: [2, "Too short employee name"],
+      maxlength: [32, "Too long employee name"],
+    },
+    name_en: {
+      type: String,
+      required: [true, "employee required"],
       minlength: [2, "Too short employee name"],
       maxlength: [32, "Too long employee name"],
     },
@@ -17,10 +22,15 @@ const teamSchema = new mongoose.Schema(
       type: String,
       required: [true, "Employee Image cover is required"],
     },
-    job: {
+    job_ar: {
       type: String,
       required: [true, "Employee job is required"],
-      minlength: [5, "Too short employee job"],
+      minlength: [3, "Too short employee job"],
+    },
+    job_en: {
+      type: String,
+      required: [true, "Employee job is required"],
+      minlength: [3, "Too short employee job"],
     },
   },
   { timestamps: true }
