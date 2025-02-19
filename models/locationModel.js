@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 
 const locationSchema = new mongoose.Schema(
   {
-    location: {
-      type: String,
-      required: [true, " location is required"],
-    },
+    location_ar: { type: String, required: true },
+    location_en: { type: String, required: true },
 
-    description: {
+    description_ar: {
+      type: String,
+      required: [true, "location description is required"],
+      minlength: [10, "Too short location description"],
+    },
+    description_en: {
       type: String,
       required: [true, "location description is required"],
       minlength: [10, "Too short location description"],

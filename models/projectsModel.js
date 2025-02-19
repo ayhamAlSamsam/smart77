@@ -2,16 +2,19 @@ const mongoose = require('mongoose')
 
 
 const projectSchema = new mongoose.Schema({
-  name: {
+  name_ar: {
     type: String,
-    required: [true, 'project required'],
-    unique: [true, 'project must be unique'],
+    required: [true, 'project name required'],
+    
     minlength: [3, 'Too short project name'],
-    maxlength: [32, 'Too long project name'],
   },
-  commingSoon : {
-    type : Boolean 
-  } , 
+  name_en: {
+    type: String,
+    required: [true, 'project name required'],
+    
+    minlength: [3, 'Too short project name'],
+  },
+  
   slug: {
     type: String,
     lowercase: true,
@@ -21,13 +24,22 @@ imageCover: {
       type: String,
       required: [true, 'project Image cover is required'],
     },
-description : {
+description_ar: {
       type: String,
-      required: [true, 'project description is required'],
-      minlength: [20, 'Too short project description'],
+      required: [true, "location description is required"],
+      minlength: [10, "Too short location description"],
+    },
+    description_en: {
+      type: String,
+      required: [true, "location description is required"],
+      minlength: [10, "Too short location description"],
     },
     commingSoon : Boolean ,
-    category: {
+    category_ar: {
+      type: String , 
+      required: [true, 'Category is required'] ,
+    },
+    category_en: {
       type: String , 
       required: [true, 'Category is required'] ,
     }

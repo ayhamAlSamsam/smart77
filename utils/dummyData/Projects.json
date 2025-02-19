@@ -1,0 +1,112 @@
+[
+    {
+      "name_ar": "مشروع الذكاء الاصطناعي",
+      "name_en": "AI Project",
+      "slug": "ai-project",
+      "imageCover": "ai-project.jpg",
+      "description_ar": "مشروع يعتمد على الذكاء الاصطناعي لتحليل البيانات وتحسين الأداء.",
+      "description_en": "A project based on AI for data analysis and performance improvement.",
+      "commingSoon": false,
+      "category_ar": "تكنولوجيا",
+      "category_en": "Technology"
+    },
+    {
+      "name_ar": "منصة التجارة الإلكترونية",
+      "name_en": "E-commerce Platform",
+      "slug": "ecommerce-platform",
+      "imageCover": "ecommerce-platform.jpg",
+      "description_ar": "منصة تسوق إلكترونية توفر تجربة شراء سلسة وآمنة.",
+      "description_en": "An e-commerce platform providing a smooth and secure shopping experience.",
+      "commingSoon": true,
+      "category_ar": "تجارة إلكترونية",
+      "category_en": "E-commerce"
+    },
+    {
+      "name_ar": "تطبيق إدارة المهام",
+      "name_en": "Task Management App",
+      "slug": "task-manager",
+      "imageCover": "task-manager.jpg",
+      "description_ar": "تطبيق يساعد المستخدمين على تنظيم مهامهم اليومية بفعالية.",
+      "description_en": "An app that helps users organize their daily tasks efficiently.",
+      "commingSoon": false,
+      "category_ar": "إنتاجية",
+      "category_en": "Productivity"
+    },
+    {
+      "name_ar": "نظام حجز المواعيد",
+      "name_en": "Appointment Booking System",
+      "slug": "appointment-system",
+      "imageCover": "appointment-system.jpg",
+      "description_ar": "نظام يسمح بحجز وإدارة المواعيد بسهولة عبر الإنترنت.",
+      "description_en": "A system that allows booking and managing appointments online with ease.",
+      "commingSoon": false,
+      "category_ar": "خدمات",
+      "category_en": "Services"
+    },
+    {
+      "name_ar": "تطبيق الصحة واللياقة",
+      "name_en": "Health & Fitness App",
+      "slug": "health-fitness",
+      "imageCover": "health-fitness.jpg",
+      "description_ar": "تطبيق يساعد المستخدمين في تحسين لياقتهم البدنية وتتبع أنشطتهم الصحية.",
+      "description_en": "An app that helps users improve their fitness and track their health activities.",
+      "commingSoon": true,
+      "category_ar": "صحة ولياقة",
+      "category_en": "Health & Fitness"
+    },
+    {
+      "name_ar": "موقع تعلم البرمجة",
+      "name_en": "Programming Learning Website",
+      "slug": "coding-learning",
+      "imageCover": "coding-learning.jpg",
+      "description_ar": "منصة تفاعلية لتعليم البرمجة من الصفر.",
+      "description_en": "An interactive platform to teach programming from scratch.",
+      "commingSoon": false,
+      "category_ar": "تعليم",
+      "category_en": "Education"
+    },
+    {
+      "name_ar": "نظام إدارة الموارد البشرية",
+      "name_en": "HR Management System",
+      "slug": "hr-management",
+      "imageCover": "hr-management.jpg",
+      "description_ar": "نظام متكامل لإدارة الموارد البشرية وتتبع بيانات الموظفين.",
+      "description_en": "A comprehensive system for HR management and employee data tracking.",
+      "commingSoon": false,
+      "category_ar": "إدارة أعمال",
+      "category_en": "Business Management"
+    },
+    {
+      "name_ar": "منصة تحليل البيانات",
+      "name_en": "Data Analytics Platform",
+      "slug": "data-analytics",
+      "imageCover": "data-analytics.jpg",
+      "description_ar": "أداة قوية لتحليل البيانات واستخراج الرؤى المهمة.",
+      "description_en": "A powerful tool for data analysis and insight extraction.",
+      "commingSoon": true,
+      "category_ar": "تحليل البيانات",
+      "category_en": "Data Analytics"
+    },
+    {
+      "name_ar": "تطبيق الترجمة الفورية",
+      "name_en": "Instant Translation App",
+      "slug": "instant-translation",
+      "imageCover": "instant-translation.jpg",
+      "description_ar": "تطبيق يتيح الترجمة الفورية بين اللغات المختلفة.",
+      "description_en": "An app that provides instant translation between different languages.",
+      "commingSoon": false,
+      "category_ar": "لغة وترجمة",
+      "category_en": "Language & Translation"
+    },
+    {
+      "name_ar": "تطبيق السفر والسياحة",
+      "name_en": "Travel & Tourism App",
+      "slug": "travel-tourism",
+      "imageCover": "travel-tourism.jpg",
+      "description_ar": "تطبيق يقدم خدمات التخطيط للسفر وحجوزات الفنادق والرحلات.",
+      "description_en": "An app that offers travel planning services, hotel bookings, and trip reservations.",
+      "commingSoon": true,
+      "category_ar": "سياحة",
+      "category_en": "Tourism"
+    }
+  ]

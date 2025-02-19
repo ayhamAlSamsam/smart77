@@ -7,7 +7,17 @@ exports.getProjectValidator = [
   validatorMiddleware,
 ];
 exports.createProjectValidator = [
-  check('name')
+  check('name_ar')
+    .notEmpty()
+    .withMessage('Project required')
+    .isLength({ min: 3 })
+    .withMessage('Too short Project name')
+    .isLength({ max: 32 })
+    .withMessage('too long Project name')
+    .custom((val, { req }) => {
+        req.body.slug = slugify(val);
+        return true}) ,
+  check('name_en')
     .notEmpty()
     .withMessage('Project required')
     .isLength({ min: 3 })
@@ -19,7 +29,12 @@ exports.createProjectValidator = [
         return true}) ,
       check("comingSoon")
       .optional(),
-    check('description')
+    check('description_ar')
+    .notEmpty()
+    .withMessage("description required") 
+    .isLength({min : 15})
+    .withMessage("too short description"),
+    check('description_en')
     .notEmpty()
     .withMessage("description required") 
     .isLength({min : 15})

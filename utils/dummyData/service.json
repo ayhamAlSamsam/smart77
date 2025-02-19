@@ -1,0 +1,92 @@
+[
+    {
+      "name_ar": "تطوير مواقع الويب",
+      "name_en": "Web Development",
+      "slug": "web-development",
+      "imageCover": "web_dev.jpg",
+      "commingSoon": false,
+      "description_ar": "خدمة تطوير مواقع الويب باستخدام أحدث التقنيات.",
+      "description_en": "Web development service using the latest technologies."
+    },
+    {
+      "name_ar": "تطوير تطبيقات الهاتف",
+      "name_en": "Mobile App Development",
+      "slug": "mobile-app-development",
+      "imageCover": "mobile_dev.jpg",
+      "commingSoon": false,
+      "description_ar": "برمجة وتصميم تطبيقات الهواتف الذكية على Android و iOS.",
+      "description_en": "Developing and designing mobile apps for Android and iOS."
+    },
+    {
+      "name_ar": "تحليل البيانات",
+      "name_en": "Data Analysis",
+      "slug": "data-analysis",
+      "imageCover": "data_analysis.jpg",
+      "commingSoon": true,
+      "description_ar": "تحليل البيانات الضخمة لاستخراج رؤى قيمة.",
+      "description_en": "Analyzing big data to extract valuable insights."
+    },
+    {
+      "name_ar": "تصميم تجربة المستخدم",
+      "name_en": "UX/UI Design",
+      "slug": "ux-ui-design",
+      "imageCover": "ux_ui_design.jpg",
+      "commingSoon": false,
+      "description_ar": "تصميم واجهات المستخدم بأسلوب عصري وتجربة مستخدم مثالية.",
+      "description_en": "Designing modern UI and providing an optimal user experience."
+    },
+    {
+      "name_ar": "أمن المعلومات",
+      "name_en": "Cybersecurity",
+      "slug": "cybersecurity",
+      "imageCover": "cybersecurity.jpg",
+      "commingSoon": true,
+      "description_ar": "حماية البيانات والتطبيقات من الهجمات الإلكترونية.",
+      "description_en": "Protecting data and applications from cyber threats."
+    },
+    {
+      "name_ar": "الذكاء الاصطناعي والتعلم الآلي",
+      "name_en": "AI & Machine Learning",
+      "slug": "ai-machine-learning",
+      "imageCover": "ai_ml.jpg",
+      "commingSoon": false,
+      "description_ar": "تطوير حلول الذكاء الاصطناعي والتعلم الآلي لتحسين العمليات.",
+      "description_en": "Developing AI and ML solutions to enhance processes."
+    },
+    {
+      "name_ar": "الحوسبة السحابية",
+      "name_en": "Cloud Computing",
+      "slug": "cloud-computing",
+      "imageCover": "cloud_computing.jpg",
+      "commingSoon": false,
+      "description_ar": "تقديم خدمات الحوسبة السحابية لمختلف الأنظمة.",
+      "description_en": "Providing cloud computing services for various systems."
+    },
+    {
+      "name_ar": "تطوير الألعاب",
+      "name_en": "Game Development",
+      "slug": "game-development",
+      "imageCover": "game_dev.jpg",
+      "commingSoon": false,
+      "description_ar": "تصميم وتطوير ألعاب الفيديو باستخدام أحدث المحركات.",
+      "description_en": "Designing and developing video games using the latest engines."
+    },
+    {
+      "name_ar": "أنظمة إدارة المحتوى",
+      "name_en": "Content Management Systems",
+      "slug": "cms",
+      "imageCover": "cms.jpg",
+      "commingSoon": false,
+      "description_ar": "تطوير وتهيئة أنظمة إدارة المحتوى مثل ووردبريس وجوملا.",
+      "description_en": "Developing and configuring CMS platforms like WordPress and Joomla."
+    },
+    {
+      "name_ar": "إنترنت الأشياء",
+      "name_en": "Internet of Things",
+      "slug": "iot",
+      "imageCover": "iot.jpg",
+      "commingSoon": true,
+      "description_ar": "دمج الأجهزة الذكية عبر تقنيات إنترنت الأشياء.",
+      "description_en": "Integrating smart devices through IoT technologies."
+    }
+  ]

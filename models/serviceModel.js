@@ -2,10 +2,17 @@ const mongoose = require("mongoose");
 
 const serviceSchema = new mongoose.Schema(
   {
-    name: {
+    name_ar: {
       type: String,
       required: [true, "service required"],
-      unique: [true, "service must be unique"],
+     
+      minlength: [3, "Too short service name"],
+      maxlength: [32, "Too long service name"],
+    },
+    name_en: {
+      type: String,
+      required: [true, "service required"],
+     
       minlength: [3, "Too short service name"],
       maxlength: [32, "Too long service name"],
     },
@@ -20,10 +27,15 @@ const serviceSchema = new mongoose.Schema(
 
     commingSoon : Boolean ,
     
-    description: {
+   description_ar: {
       type: String,
-      required: [true, "Service description is required"],
-      minlength: [20, "Too short service description"],
+      required: [true, "location description is required"],
+      minlength: [10, "Too short location description"],
+    },
+    description_en: {
+      type: String,
+      required: [true, "location description is required"],
+      minlength: [10, "Too short location description"],
     },
   },
   { timestamps: true }
