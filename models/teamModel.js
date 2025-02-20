@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const teamSchema = new mongoose.Schema(
   {
     name_ar: {
       type: String,
-      required: [true, "employee required"],
+      required: [true, "Employee required"],
       minlength: [2, "Too short employee name"],
       maxlength: [32, "Too long employee name"],
     },
     name_en: {
       type: String,
-      required: [true, "employee required"],
+      required: [true, "Employee required"],
       minlength: [2, "Too short employee name"],
       maxlength: [32, "Too long employee name"],
     },
@@ -36,6 +37,14 @@ const teamSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+teamSchema.pre("findOneAndUpdate", function (next) {
+  const update = this.getUpdate();
+  if (update.name_en) {
+    update.slug = slugify(update.name_en, { lower: true, strict: true });
+  }
+  next();
+});
+
 const setImageURL = (doc) => {
   if (doc.imageCover) {
     const imageUrl = `${process.env.BASE_URL}/team/${doc.imageCover}`;
@@ -43,17 +52,16 @@ const setImageURL = (doc) => {
   }
 };
 
-// findOne, findAll and update
 teamSchema.post("init", (doc) => {
   setImageURL(doc);
 });
 
-// create
+// تحديث الصورة عند حفظ البيانات
 teamSchema.post("save", (doc) => {
   setImageURL(doc);
 });
 
-// 2-create model
+// 2-إنشاء المودل
 const teamModel = mongoose.model("team", teamSchema);
 
 module.exports = teamModel;

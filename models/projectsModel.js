@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const slugify = require("slugify");
 
 const projectSchema = new mongoose.Schema({
   name_ar: {
@@ -47,6 +47,13 @@ description_ar: {
 { timestamps: true }
 );
 
+projectSchema.pre("findOneAndUpdate", function (next) {
+  const update = this.getUpdate();
+  if (update.name_en) {
+    update.slug = slugify(update.name_en, { lower: true, strict: true });
+  }
+  next();
+});
 const setImageURL = (doc) => {
 if (doc.imageCover) {
   const imageUrl = `${process.env.BASE_URL}/projects/${doc.imageCover}`;

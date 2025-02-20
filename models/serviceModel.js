@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const serviceSchema = new mongoose.Schema(
   {
@@ -40,6 +41,13 @@ const serviceSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+serviceSchema.pre("findOneAndUpdate", function (next) {
+  const update = this.getUpdate();
+  if (update.name_en) {
+    update.slug = slugify(update.name_en, { lower: true, strict: true });
+  }
+  next();
+});
 
 const setImageURL = (doc) => {
   if (doc.imageCover) {
