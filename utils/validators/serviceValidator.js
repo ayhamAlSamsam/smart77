@@ -7,7 +7,18 @@ exports.getServiceValidator = [
   validatorMiddleware,
 ];
 exports.createServiceValidator = [
-  check("name")
+  check("name_ar")
+    .notEmpty()
+    .withMessage("Service required")
+    .isLength({ min: 3 })
+    .withMessage("Too short Service name")
+    .isLength({ max: 32 })
+    .withMessage("too long Service name")
+    .custom((val, { req }) => {
+      req.body.slug = slugify(val);
+      return true;
+    }),
+  check("name_en")
     .notEmpty()
     .withMessage("Service required")
     .isLength({ min: 3 })
@@ -19,11 +30,18 @@ exports.createServiceValidator = [
       return true;
     }),
 
-  check("description")
+  check("description_ar")
     .notEmpty()
     .withMessage("description required")
     .isLength({ min: 15 })
     .withMessage("too short description"),
+
+  check("description_en")
+    .notEmpty()
+    .withMessage("description required")
+    .isLength({ min: 15 })
+    .withMessage("too short description"),
+    
   check("imageCover").notEmpty().withMessage("Service imageCover is required"),
   validatorMiddleware,
 ];
